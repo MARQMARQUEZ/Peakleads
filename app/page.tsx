@@ -1,65 +1,502 @@
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      <Header />
+      
+      {/* Hero Section + Benefits (combined for seamless blend) */}
+      <section className="relative overflow-hidden pt-20">
+        {/* Subtle gradient background - extends through both hero and benefits */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-white">
+          {/* Subtle glass orbs */}
+          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-gradient-to-br from-gray-300/20 to-gray-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-[40%] left-1/3 w-96 h-96 bg-gradient-to-br from-gray-200/20 to-white/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto w-full">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="space-y-8"
+            >
+              {/* Main Heading */}
+              <div className="space-y-6">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight"
+                >
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                    Build Your
+                  </span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                    Presence
+                  </span>
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="text-xl text-gray-600 max-w-xl leading-relaxed"
+                >
+                  Transform your business with precision-crafted websites designed for painting, roofing, and plumbing professionals.
+                </motion.p>
+              </div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative px-8 py-4 rounded-2xl overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <span className="relative text-white font-semibold tracking-wide">Book A Call</span>
+                </motion.button>
+                
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-white/80 backdrop-blur-xl border border-gray-200/60 text-gray-800 font-semibold rounded-2xl hover:bg-white/90 transition-all shadow-lg shadow-gray-900/5"
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
+
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+              className="relative flex items-center justify-center"
+            >
+              {/* Subtle glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-300/20 to-gray-400/10 rounded-full blur-3xl"></div>
+              
+              {/* Main Image - Circle Crop with Hover Effect */}
+              <motion.div 
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative z-10 w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-full overflow-hidden cursor-pointer"
+              >
+                <Image
+                  src="https://peakleads.online/wp-content/uploads/2025/11/image1.png"
+                  alt="PeakLeads Hero"
+                  width={800}
+                  height={800}
+                  priority
+                  className="w-full h-full object-cover drop-shadow-2xl"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </main>
+
+        {/* Benefits Content - Still within hero section for seamless background */}
+        <div className="relative z-10 container mx-auto px-4 pb-24 md:pb-32">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Benefits
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                Why Fast-Moving Founders
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Pick Us
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Benefits Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {/* Card 1 - Designed to Convert */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Floating pill tags */}
+                  <div className="flex flex-col items-center justify-center gap-3 p-6">
+                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                      Clarity first
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      Trust-focused
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      Action-driven
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Designed to convert</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Fund-ready sites that turn traffic into demos and signups. Clear product story & credible.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2 - Built Fast */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Browser mockup */}
+                  <div className="relative bg-gray-900 rounded-xl p-4 shadow-2xl transform rotate-[-2deg]">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                      </div>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg px-6 py-4 min-w-[180px]">
+                      <p className="text-white text-sm font-medium">Your Next Site</p>
+                      <p className="text-gray-400 text-xs mt-1">Starts Here.</p>
+                    </div>
+                    {/* Cursor */}
+                    <div className="absolute bottom-0.5 left-0.5 w-5 h-5">
+                      <svg viewBox="0 0 24 24" fill="white" className="drop-shadow-lg" style={{ transform: 'rotate(12deg)' }}>
+                        <path d="M4 4l16 6-6 2-2 6z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Built fast, without drama</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    2-3 week sprint from call to live site. No back-and-forth, polished and performant.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Progress Updates */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Task completion pills */}
+                  <div className="flex flex-col items-center justify-center gap-3 p-6">
+                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Mobile shipped.
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
+                      </svg>
+                      Homepage layout drafted.
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                      </svg>
+                      New version is live.
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Progress every single day</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Daily updates and Looms. See what's shipped, what's next, no chasing.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Let's Begin Section */}
+      <section className="py-24 relative bg-gradient-to-b from-white via-gray-50 to-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Roadmap */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-12"
+            >
+              <h2 className="text-5xl md:text-6xl font-black mb-16">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                  Let's
+                </span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                  Begin
+                </span>
+              </h2>
+
+              {/* Roadmap Steps */}
+              <div className="relative">
+                {/* Abstract connecting lines - thin, gradient, centered between circles */}
+                <svg className="absolute left-0 top-0 w-full h-full pointer-events-none" style={{ height: '100%', width: '300px' }}>
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="transparent" />
+                      <stop offset="25%" stopColor="#d1d5db" />
+                      <stop offset="75%" stopColor="#d1d5db" />
+                      <stop offset="100%" stopColor="transparent" />
+                    </linearGradient>
+                  </defs>
+                  {/* Line between circle 1 and circle 2 - exactly centered */}
+                  <path 
+                    d="M 70 95 Q 100 115, 120 140" 
+                    stroke="#d1d5db" 
+                    strokeWidth="1" 
+                    fill="none"
+                    opacity="0.5"
+                  />
+                  {/* Line between circle 2 and circle 3 - exactly centered */}
+                  <path 
+                    d="M 95 248 Q 65 278, 52 308" 
+                    stroke="#d1d5db" 
+                    strokeWidth="1" 
+                    fill="none"
+                    opacity="0.5"
+                  />
+                </svg>
+
+                {/* Step 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="relative flex items-start gap-8 mb-20"
+                >
+                  <div className="relative z-10 w-20 h-20 flex items-center justify-center">
+                    {/* Outer ring */}
+                    <div className="absolute inset-0 rounded-full border border-gray-200/40"></div>
+                    {/* Inner glass circle */}
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200/60 flex items-center justify-center shadow-lg shadow-gray-200/20 backdrop-blur-sm">
+                      <span className="text-lg font-medium text-gray-400">1</span>
+                    </div>
+                  </div>
+                  <div className="pt-4">
+                    <p className="text-lg text-gray-600">
+                      Fill out the form—we'll get<br />
+                      back to you within <span className="font-semibold text-gray-800">24 hours</span>
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Step 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="relative flex items-start gap-8 mb-20 ml-24"
+                >
+                  <div className="relative z-10 w-20 h-20 flex items-center justify-center">
+                    {/* Outer ring */}
+                    <div className="absolute inset-0 rounded-full border border-gray-300/40"></div>
+                    {/* Inner glass circle */}
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-50 via-gray-100 to-gray-150 border border-gray-200/60 flex items-center justify-center shadow-lg shadow-gray-200/20 backdrop-blur-sm">
+                      <span className="text-lg font-medium text-gray-400">2</span>
+                    </div>
+                  </div>
+                  <div className="pt-4">
+                    <p className="text-lg text-gray-600">
+                      Get a <span className="font-semibold text-gray-800">tailored proposal</span><br />
+                      specifically for your project
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Step 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                  className="relative flex items-start gap-8"
+                >
+                  <div className="relative z-10 w-20 h-20 flex items-center justify-center">
+                    {/* Outer ring */}
+                    <div className="absolute inset-0 rounded-full border border-gray-200/40"></div>
+                    {/* Inner glass circle */}
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200/60 flex items-center justify-center shadow-lg shadow-gray-200/20 backdrop-blur-sm">
+                      <span className="text-lg font-medium text-gray-400">3</span>
+                    </div>
+                  </div>
+                  <div className="pt-4">
+                    <p className="text-lg text-gray-600">
+                      <span className="font-semibold text-gray-800">Kick-start your project</span><br />
+                      with our expert team
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Right - Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              {/* Glass Form Card */}
+              <div 
+                className="relative bg-white/70 backdrop-blur-2xl border border-gray-200/80 rounded-[32px] p-8 md:p-10 shadow-xl shadow-gray-900/5"
+                style={{
+                  backdropFilter: 'blur(40px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+                }}
+              >
+                {/* Inner shine */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent rounded-t-[32px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent rounded-[32px] pointer-events-none"></div>
+
+                <form className="relative z-10 space-y-6">
+                  {/* Name */}
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+                    />
+                  </div>
+
+                  {/* WhatsApp */}
+                  <div>
+                    <input
+                      type="tel"
+                      placeholder="WhatsApp"
+                      className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+                    />
+                  </div>
+
+                  {/* How did you find us? */}
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="How did you find us?"
+                      className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+                    />
+                  </div>
+
+                  {/* Your request */}
+                  <div>
+                    <textarea
+                      placeholder="Your request"
+                      rows={3}
+                      className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors resize-none"
+                    ></textarea>
+                  </div>
+
+                  {/* Submit Button */}
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative w-full md:w-auto px-12 py-4 rounded-full overflow-hidden mt-4"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    <span className="relative text-white font-semibold tracking-wide">Submit</span>
+                  </motion.button>
+
+                  {/* Privacy Policy */}
+                  <p className="text-sm text-gray-500 mt-4">
+                    By submitting this form, you agree to our{" "}
+                    <a href="/privacy" className="text-gray-700 hover:text-gray-900 underline transition-colors">
+                      Privacy Policy
+                    </a>
+                  </p>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
