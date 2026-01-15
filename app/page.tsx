@@ -4,8 +4,21 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { useEffect } from 'react';
 
 export default function Home() {
+  // Handle smooth scroll to testimonials on page load if hash is present
+  useEffect(() => {
+    if (window.location.hash === '#testimonials') {
+      setTimeout(() => {
+        const testimonialsSection = document.getElementById('testimonials');
+        if (testimonialsSection) {
+          testimonialsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
       <Header />
@@ -383,7 +396,7 @@ export default function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 bg-gradient-to-b from-gray-50 to-white">
+      <section id="testimonials" className="relative pt-16 md:pt-24 pb-16 md:pb-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           {/* Header Text */}
           <motion.div

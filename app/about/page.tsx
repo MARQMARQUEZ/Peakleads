@@ -151,9 +151,13 @@ export default function About() {
                 <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
                   Our Story
                 </span>
-                <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                    Built on Trust
+                    Built on
+                  </span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                    Trust
                   </span>
                 </h2>
               </div>
@@ -214,9 +218,13 @@ export default function About() {
             <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
               Core Values
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                What Drives Us Forward
+                What Drives
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Us Forward
               </span>
             </h2>
           </motion.div>
@@ -276,9 +284,13 @@ export default function About() {
             <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
               Our Team
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                Meet the Experts
+                Meet the
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Experts
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
@@ -330,9 +342,13 @@ export default function About() {
             <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
               Why Choose Us
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                Proven Results
+                Proven
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Results
               </span>
             </h2>
           </motion.div>
@@ -412,9 +428,13 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent rounded-[32px] pointer-events-none"></div>
 
               <div className="relative z-10 space-y-8">
-                <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                    Ready to Grow?
+                    Ready to
+                  </span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                    Grow?
                   </span>
                 </h2>
 

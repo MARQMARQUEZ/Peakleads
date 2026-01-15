@@ -82,74 +82,82 @@ export default function Services() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-white">
-          {/* Subtle glass orbs */}
-          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-gradient-to-br from-gray-300/20 to-gray-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-[40%] left-1/3 w-96 h-96 bg-gradient-to-br from-gray-200/20 to-white/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-20">
+        {/* Background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-gray-300/20 to-gray-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="space-y-6"
-            >
-              {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight"
-              >
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                  Our Services
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
-              >
-                Comprehensive digital marketing solutions designed to help all businesses attract more customers, build trust, and grow their revenue.
-              </motion.p>
-            </motion.div>
-
-            {/* CTA Button */}
-            <motion.div
+        <div className="relative z-10 container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-8 mb-16 pt-16"
+          >
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight"
             >
-              <a href="https://calendly.com/bradley-hart/30min" target="_blank" rel="noopener noreferrer">
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative px-8 py-4 rounded-2xl overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  <span className="relative text-white font-semibold tracking-wide">Book a Call</span>
-                </motion.button>
-              </a>
-            </motion.div>
-          </div>
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                Our Services
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            >
+              Comprehensive digital marketing solutions designed to help all businesses attract more customers, build trust, and grow their revenue.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
+      {/* Glass Marquee Separator */}
+      <div className="py-6 overflow-hidden">
+        <motion.div
+          className="flex shrink-0"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 25,
+              ease: 'linear',
+            },
+          }}
+        >
+          {[...Array(2)].map((_, setIndex) => (
+            <div key={setIndex} className="flex items-center">
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Professional Digital Services
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Drive Real Results
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Grow Your Business
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Attract More Customers
+              </span>
+              <span className="text-gray-300">·</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
       {/* Services Grid */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -211,13 +219,15 @@ export default function Services() {
                       <div key={i} className="flex items-start gap-3">
                         <svg
                           className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
                           />
                         </svg>
                         <span className="text-gray-700 font-medium">{feature}</span>
@@ -268,6 +278,43 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Glass Marquee Separator */}
+      <div className="py-6 overflow-hidden bg-white">
+        <motion.div
+          className="flex shrink-0"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 25,
+              ease: 'linear',
+            },
+          }}
+        >
+          {[...Array(2)].map((_, setIndex) => (
+            <div key={setIndex} className="flex items-center">
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Transform Your Business
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Scale With Confidence
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Proven Strategies
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Expert Team Ready
+              </span>
+              <span className="text-gray-300">·</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
       {/* Why Choose Us Section */}
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -304,7 +351,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1 p-8 md:p-10">
+                <div className="bg-white hover:bg-gray-50 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-lg p-8 md:p-10">
                   <div className="flex items-start gap-6">
                     <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-gray-900 to-gray-700 flex-shrink-0">
                       {benefit.number}
@@ -326,7 +373,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="relative py-24 md:py-32 bg-gray-50">
+      <section className="relative py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -412,53 +459,54 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 md:py-32 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="relative overflow-hidden rounded-3xl">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-white via-gray-50 to-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            {/* Glass Card */}
+            <div 
+              className="relative bg-white/70 backdrop-blur-2xl border border-gray-200/80 rounded-[32px] p-8 md:p-16 shadow-xl shadow-gray-900/5 text-center"
+              style={{
+                backdropFilter: 'blur(40px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+              }}
+            >
+              {/* Inner shine */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent rounded-t-[32px]"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent rounded-[32px] pointer-events-none"></div>
 
-            {/* Decorative elements */}
-            <div className="absolute inset-0">
-              <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-gray-700/30 to-gray-900/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-              <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-gray-700/30 to-gray-900/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 py-20 md:py-24 px-4 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-8 max-w-4xl mx-auto"
-              >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                  Ready to Transform <br />
-                  Your Business?
+              <div className="relative z-10 space-y-8">
+                <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                    Ready to Grow?
+                  </span>
                 </h2>
 
-                <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
                   Start your lead generation journey today. Our expert team is ready to help you attract more customers and grow your revenue.
                 </p>
 
-                <a href="https://calendly.com/bradley-hart/30min" target="_blank" rel="noopener noreferrer">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="group relative px-10 py-5 rounded-2xl overflow-hidden inline-block"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-100 to-white"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                    <span className="relative text-gray-900 font-bold text-lg tracking-wide">
-                      Book a Free Consultation
-                    </span>
-                  </motion.button>
-                </a>
-              </motion.div>
+                <motion.a
+                  href="https://calendly.com/bradley-hart/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative inline-block px-12 py-5 rounded-2xl overflow-hidden mt-6"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <span className="relative text-white font-semibold text-lg tracking-wide">Book A Call</span>
+                </motion.a>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

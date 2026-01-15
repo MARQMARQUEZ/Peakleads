@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,21 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleTestimonialsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // If we're on the home page, scroll to the testimonials section
+    if (pathname === '/') {
+      const testimonialsSection = document.getElementById('testimonials');
+      if (testimonialsSection) {
+        testimonialsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // If we're on another page, navigate to home page with hash
+      window.location.href = '/#testimonials';
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
@@ -57,8 +74,14 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6 relative z-10">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
-            <NavLink href="#services">What We Do</NavLink>
-            <NavLink href="#testimonials">Testimonials</NavLink>
+            <NavLink href="/services">What We Do</NavLink>
+            <a 
+              href="/#testimonials"
+              onClick={handleTestimonialsClick}
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Testimonials
+            </a>
           </div>
 
           {/* CTA Button */}

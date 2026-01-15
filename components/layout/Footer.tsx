@@ -57,7 +57,7 @@ export default function Footer() {
             
             <div className="relative z-10">
               {/* Top Section */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-12 mb-12">
                 {/* Company Info */}
                 <div className="space-y-6">
                   <p className="text-gray-600 text-lg leading-relaxed max-w-sm">
@@ -98,7 +98,7 @@ export default function Footer() {
                 </div>
                 
                 {/* Company Links */}
-                <div className="space-y-4">
+                <div className="space-y-4 md:ml-16">
                   <h4 className="text-xl font-bold text-gray-900">Company</h4>
                   <div className="space-y-3">
                     <Link href="/services" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
@@ -110,14 +110,11 @@ export default function Footer() {
                     <Link href="#testimonials" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
                       Testimonials
                     </Link>
-                    <Link href="#faq" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
-                      FAQs
-                    </Link>
                   </div>
                 </div>
                 
                 {/* Services Links */}
-                <div className="space-y-4">
+                <div className="space-y-4 md:ml-16">
                   <h4 className="text-xl font-bold text-gray-900">Services</h4>
                   <div className="space-y-3">
                     <Link href="/services#web-design" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
@@ -131,6 +128,22 @@ export default function Footer() {
                     </Link>
                   </div>
                 </div>
+
+                {/* Legal Links */}
+                <div className="space-y-4 md:ml-16">
+                  <h4 className="text-xl font-bold text-gray-900">Legal</h4>
+                  <div className="space-y-3">
+                    <Link href="/privacy-policy" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                      Privacy Policy
+                    </Link>
+                    <Link href="/terms-and-conditions" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                      Terms & Conditions
+                    </Link>
+                    <Link href="/cookie-policy" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                      Cookie Policy
+                    </Link>
+                  </div>
+                </div>
               </div>
               
               {/* Bottom Section */}
@@ -139,15 +152,6 @@ export default function Footer() {
                   © 2026 PeakLeads. All rights reserved.
                 </p>
                 <div className="flex flex-wrap items-center gap-6 justify-center">
-                  <Link href="/privacy-policy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
-                    Privacy Policy
-                  </Link>
-                  <Link href="/terms-and-conditions" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
-                    Terms & Conditions
-                  </Link>
-                  <Link href="/cookie-policy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
-                    Cookie Policy
-                  </Link>
                   <Link href="/disclaimer" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
                     Disclaimer
                   </Link>
