@@ -278,6 +278,248 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Portfolio Gallery Carousel */}
+      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 container mx-auto px-4"
+        >
+          <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+            Portfolio
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+              Our Recent
+            </span>
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+              Work
+            </span>
+          </h2>
+        </motion.div>
+
+        {/* Carousel Container - Full Width */}
+        <div className="relative w-full">
+          {/* Carousel Wrapper */}
+          <div className="relative overflow-hidden">
+            {/* Sliding Track */}
+            <motion.div
+              className="flex gap-6"
+              animate={{
+                x: [0, -2584],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 37.5,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* Duplicate the images multiple times for seamless loop */}
+              {[...Array(3)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-6 shrink-0">
+                  {/* Image 1 */}
+                  <a href="https://greatergood.co/info" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                    <Image
+                      src="/1.png"
+                      alt="Portfolio project 1"
+                      width={640}
+                      height={360}
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </a>
+
+                  {/* Image 2 */}
+                  <a href="https://andersonroofingrenovations.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                    <Image
+                      src="/2.png"
+                      alt="Portfolio project 2"
+                      width={640}
+                      height={360}
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </a>
+
+                  {/* Image 3 */}
+                  <a href="https://waterautomation.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                    <Image
+                      src="/3.png"
+                      alt="Portfolio project 3"
+                      width={640}
+                      height={360}
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </a>
+
+                  {/* Image 4 */}
+                  <a href="https://theleakgeeks.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                    <Image
+                      src="/4.png"
+                      alt="Portfolio project 4"
+                      width={640}
+                      height={360}
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </a>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Gradient Fade Edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10"></div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-6">
+          {/* Header Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Testimonials
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                Trusted by the
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Best Clients
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Reviews Grid - 2x2 on desktop, stacked on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {/* Review 1 - Greg */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 pt-6 px-6 pb-4 rounded-3xl md:min-h-[300px] flex flex-col transition-all duration-300 hover:-translate-y-1"
+            >
+              <p className="text-base text-gray-700 leading-relaxed mb-auto">
+                Peak Leads built us a beautiful website that perfectly captures our brand. The team was professional, responsive, and delivered everything on time. Our online presence has never looked better.
+              </p>
+              <div className="flex items-center gap-4 mt-8">
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://peakleads.online/wp-content/uploads/2025/11/Greg-e1738938682562-2-e1762539914353.png"
+                    alt="Greg"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Greg</p>
+                  <p className="text-xs text-gray-500">Business Owner</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Review 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 pt-6 px-6 pb-4 rounded-3xl md:min-h-[300px] flex flex-col transition-all duration-300 hover:-translate-y-1"
+            >
+              <p className="text-base text-gray-700 leading-relaxed mb-auto">
+                Working with Peak Leads was a game-changer for my business. They understood exactly what we needed and delivered a website that not only looks amazing but converts visitors into customers. Highly recommended!
+              </p>
+              <div className="flex items-center gap-4 mt-8">
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://peakleads.online/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-01-at-22.26.33_618e8afa-1.jpg"
+                    alt="Client"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Michael Anderson</p>
+                  <p className="text-xs text-gray-500">Contractor</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Review 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 pt-6 px-6 pb-4 rounded-3xl md:min-h-[300px] flex flex-col transition-all duration-300 hover:-translate-y-1"
+            >
+              <p className="text-base text-gray-700 leading-relaxed mb-auto">
+                The team at Peak Leads exceeded all expectations. From the initial consultation to the final launch, they were communicative, creative, and truly cared about our success. Our new site has dramatically increased our leads.
+              </p>
+              <div className="flex items-center gap-4 mt-8">
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://peakleads.online/wp-content/uploads/2025/11/Screenshot-2025-11-10-125003.png"
+                    alt="Client"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Sarah Thompson</p>
+                  <p className="text-xs text-gray-500">Roofing Company Owner</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Review 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 pt-6 px-6 pb-4 rounded-3xl md:min-h-[300px] flex flex-col transition-all duration-300 hover:-translate-y-1"
+            >
+              <p className="text-base text-gray-700 leading-relaxed mb-auto">
+                Peak Leads transformed our outdated website into a modern, professional platform. The attention to detail and understanding of our industry made all the difference. We've seen a significant uptick in inquiries since launch.
+              </p>
+              <div className="flex items-center gap-4 mt-8">
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://peakleads.online/wp-content/uploads/2026/01/Screenshot-2026-01-05-230102.png"
+                    alt="Client"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">David Chen</p>
+                  <p className="text-xs text-gray-500">Plumbing Services</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Let's Begin Section */}
       <section className="py-24 relative bg-gradient-to-b from-white via-gray-50 to-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
