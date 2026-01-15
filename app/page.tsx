@@ -67,24 +67,28 @@ export default function Home() {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="flex flex-wrap gap-4"
               >
-                <motion.button
+                <motion.a
+                  href="https://calendly.com/bradley-hart/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative px-8 py-4 rounded-2xl overflow-hidden"
+                  className="group relative px-8 py-4 rounded-2xl overflow-hidden inline-block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                   <span className="relative text-white font-semibold tracking-wide">Book A Call</span>
-                </motion.button>
+                </motion.a>
                 
-                <motion.button
+                <motion.a
+                  href="/about"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-white/80 backdrop-blur-xl border border-gray-200/60 text-gray-800 font-semibold rounded-2xl hover:bg-white/90 transition-all shadow-lg shadow-gray-900/5"
+                  className="px-8 py-4 bg-white/80 backdrop-blur-xl border border-gray-200/60 text-gray-800 font-semibold rounded-2xl hover:bg-white/90 transition-all shadow-lg shadow-gray-900/5 inline-block"
                 >
                   Learn More
-                </motion.button>
+                </motion.a>
               </motion.div>
 
             </motion.div>
@@ -517,6 +521,92 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Glass Marquee Separator */}
+      <div className="py-6 overflow-hidden">
+        <motion.div
+          className="flex shrink-0"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 25,
+              ease: 'linear',
+            },
+          }}
+        >
+          {[...Array(2)].map((_, setIndex) => (
+            <div key={setIndex} className="flex items-center">
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Ready to reach new heights
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Push boundaries
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Transform your business
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Build your presence
+              </span>
+              <span className="text-gray-300">·</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Calendly Integration Section */}
+      <section className="py-24 relative bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Schedule A Call
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                Let's Talk About
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Your Project
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Calendly Embed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative border border-gray-200/80 rounded-[32px] shadow-xl shadow-gray-900/5 overflow-hidden"
+            style={{
+              height: '850px'
+            }}
+          >
+            {/* Calendly iframe */}
+            <iframe 
+              src="https://calendly.com/bradley-hart/30min" 
+              width="100%" 
+              height="100%" 
+              frameBorder="0"
+              title="Select a Date & Time - Calendly"
+              className="rounded-[32px]"
+            />
+          </motion.div>
         </div>
       </section>
 

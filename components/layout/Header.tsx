@@ -68,7 +68,9 @@ export default function Header() {
             className="relative z-10"
           >
             <Link 
-              href="#book" 
+              href="https://calendly.com/bradley-hart/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative group flex items-center gap-2 px-5 py-2.5 rounded-full overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>

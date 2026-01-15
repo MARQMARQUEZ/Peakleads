@@ -61,7 +61,7 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32">
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-20">
         {/* Background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -73,7 +73,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-8 mb-16"
+            className="text-center space-y-8 mb-16 pt-16"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -97,6 +97,43 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Glass Marquee Separator */}
+      <div className="py-6 overflow-hidden">
+        <motion.div
+          className="flex shrink-0"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 25,
+              ease: 'linear',
+            },
+          }}
+        >
+          {[...Array(2)].map((_, setIndex) => (
+            <div key={setIndex} className="flex items-center">
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Ready to reach new heights
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Push boundaries
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Transform your business
+              </span>
+              <span className="text-gray-300">·</span>
+              <span className="text-gray-400 font-medium tracking-[0.3em] text-sm uppercase whitespace-nowrap px-12">
+                Build your presence
+              </span>
+              <span className="text-gray-300">·</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
 
       {/* Our Story Section */}
       <section className="relative py-24 md:py-32 bg-white">
