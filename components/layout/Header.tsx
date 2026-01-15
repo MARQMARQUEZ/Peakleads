@@ -56,6 +56,7 @@ export default function Header() {
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-6 relative z-10">
             <NavLink href="/">Home</NavLink>
+            <NavLink href="/about">About</NavLink>
             <NavLink href="#services">What We Do</NavLink>
             <NavLink href="#testimonials">Testimonials</NavLink>
           </div>
