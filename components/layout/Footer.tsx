@@ -67,30 +67,30 @@ export default function Footer() {
                   {/* Contact & Social */}
                   <div className="flex flex-wrap items-center gap-4">
                     <Link 
-                      href="mailto:hello@peakleads.online" 
+                      href="mailto:bradley@peakleads.agency" 
                       className="text-gray-800 font-semibold hover:text-gray-600 transition-colors"
                     >
-                      hello@peakleads.online
+                      bradley@peakleads.agency
                     </Link>
                     
                     <div className="flex items-center gap-3">
                       <Link 
-                        href="https://linkedin.com" 
+                        href="https://www.facebook.com/profile.php?id=61586554864685" 
                         target="_blank"
                         className="w-10 h-10 bg-white/80 border border-gray-200/60 rounded-xl flex items-center justify-center hover:bg-gray-100 transition-colors"
                       >
-                        <svg className="w-5 h-5 text-gray-700" viewBox="0 0 26 26" fill="currentColor">
-                          <path d="M24 0L2 0C0.895 0 0 0.895 0 2L0 24C0 25.105 0.895 26 2 26L24 26C25.105 26 26 25.105 26 24L26 2C26 0.895 25.105 0 24 0ZM24 24L2 24L2 2L24 2ZM9 11L9 19C9 19.552 8.552 20 8 20C7.448 20 7 19.552 7 19L7 11C7 10.448 7.448 10 8 10C8.552 10 9 10.448 9 11ZM20 14.5L20 19C20 19.552 19.552 20 19 20C18.448 20 18 19.552 18 19L18 14.5C18 13.119 16.881 12 15.5 12C14.119 12 13 13.119 13 14.5L13 19C13 19.552 12.552 20 12 20C11.448 20 11 19.552 11 19L11 11C11.003 10.493 11.384 10.068 11.888 10.011C12.392 9.955 12.858 10.284 12.974 10.777C14.352 9.842 16.135 9.745 17.607 10.525C19.079 11.305 19.999 12.834 20 14.5ZM9.5 7.5C9.5 8.328 8.828 9 8 9C7.172 9 6.5 8.328 6.5 7.5C6.5 6.672 7.172 6 8 6C8.828 6 9.5 6.672 9.5 7.5Z"/>
+                        <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                       </Link>
                       
                       <Link 
-                        href="https://x.com" 
+                        href="https://www.instagram.com/peakleads_?igsh=bnZjY2tpbDZoZ2h1" 
                         target="_blank"
                         className="w-10 h-10 bg-white/80 border border-gray-200/60 rounded-xl flex items-center justify-center hover:bg-gray-100 transition-colors"
                       >
-                        <svg className="w-4 h-4 text-gray-700" viewBox="0 0 22 24" fill="currentColor">
-                          <path d="M21.852 22.464L14.027 10.166L21.748 1.673C22.111 1.263 22.078 0.637 21.673 0.269C21.267 -0.099 20.641 -0.073 20.268 0.328L12.913 8.418L7.852 0.464C7.668 0.175 7.35 0 7.008 0L1.008 0C0.643 0 0.307 0.199 0.131 0.519C-0.045 0.839 -0.032 1.23 0.164 1.538L7.989 13.834L0.268 22.334C0.023 22.597 -0.062 22.973 0.046 23.316C0.155 23.659 0.439 23.918 0.792 23.993C1.144 24.068 1.509 23.948 1.748 23.679L9.103 15.589L14.164 23.543C14.349 23.829 14.667 24.001 15.008 24L21.008 24C21.373 24 21.709 23.801 21.884 23.481C22.06 23.162 22.047 22.772 21.852 22.464ZM15.557 22L2.829 2L6.454 2L19.187 22Z"/>
+                        <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.015-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
                         </svg>
                       </Link>
                     </div>
@@ -136,14 +136,20 @@ export default function Footer() {
               {/* Bottom Section */}
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200/60">
                 <p className="text-lg text-gray-600">
-                  © 2025 PeakLeads. All rights reserved.
+                  © 2026 PeakLeads. All rights reserved.
                 </p>
-                <div className="flex items-center gap-6">
+                <div className="flex flex-wrap items-center gap-6 justify-center">
                   <Link href="/privacy-policy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
                     Privacy Policy
                   </Link>
-                  <Link href="/terms" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                  <Link href="/terms-and-conditions" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
                     Terms & Conditions
+                  </Link>
+                  <Link href="/cookie-policy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    Cookie Policy
+                  </Link>
+                  <Link href="/disclaimer" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    Disclaimer
                   </Link>
                 </div>
               </div>
