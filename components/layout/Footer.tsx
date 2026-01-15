@@ -101,7 +101,7 @@ export default function Footer() {
                 <div className="space-y-4">
                   <h4 className="text-xl font-bold text-gray-900">Company</h4>
                   <div className="space-y-3">
-                    <Link href="#services" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    <Link href="/services" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
                       Services
                     </Link>
                     <Link href="/about" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
@@ -120,13 +120,13 @@ export default function Footer() {
                 <div className="space-y-4">
                   <h4 className="text-xl font-bold text-gray-900">Services</h4>
                   <div className="space-y-3">
-                    <Link href="#" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    <Link href="/services#web-design" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
                       Web Design
                     </Link>
-                    <Link href="#" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    <Link href="/services#lead-generation" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
                       Lead Generation
                     </Link>
-                    <Link href="#" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                    <Link href="/services#seo-optimization" className="block text-lg text-gray-600 hover:text-gray-900 transition-colors">
                       SEO Optimization
                     </Link>
                   </div>
