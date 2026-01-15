@@ -16,10 +16,6 @@ export const metadata: Metadata = {
   title: "PeakLeads - Lead Generation Platform",
   description: "Industry-leading lead generation and management platform",
   keywords: ["leads", "lead generation", "sales", "crm", "business"],
-  icons: {
-    icon: "/Peakleads.png",
-    apple: "/Peakleads.png",
-  },
 };
 
 export default function RootLayout({
