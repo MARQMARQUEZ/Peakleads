@@ -139,7 +139,7 @@ export default function Footer() {
                   © 2025 PeakLeads. All rights reserved.
                 </p>
                 <div className="flex items-center gap-6">
-                  <Link href="/privacy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
+                  <Link href="/privacy-policy" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">
                     Privacy Policy
                   </Link>
                   <Link href="/terms" className="text-lg text-gray-600 hover:text-gray-900 transition-colors">

@@ -10,26 +10,26 @@ export default function About() {
     {
       name: 'Bradley Hartmann',
       role: 'Founder & CEO',
-      bio: 'Ad specialist with 5+ years in digital marketing. Scaled plumbing businesses to new heights through proven web strategies.',
-      image: 'https://peakleads.online/wp-content/uploads/2025/11/bradley.jpg',
+      bio: 'Digital marketing expert with 5+ years of experience. Proven track record of scaling businesses to new heights through strategic web strategies.',
+      image: 'https://peakleads.online/wp-content/uploads/2024/11/Bradley-Hartmann.jpg',
     },
     {
       name: 'Anri Burger',
       role: 'Social Media Manager',
-      bio: 'Creates engaging content and manages digital presence for plumbing businesses across all social platforms.',
-      image: 'https://peakleads.online/wp-content/uploads/2025/11/anri.jpg',
+      bio: 'Creates engaging content and manages digital presence for businesses across all social platforms.',
+      image: 'https://peakleads.online/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-06-at-13.42.04_b08628e8.jpg',
     },
     {
       name: 'Alex Carstens',
       role: 'Paid Ads Expert',
-      bio: 'Specializes in Google Local Service Ads and paid advertising to generate high-quality leads for plumbing companies.',
-      image: 'https://peakleads.online/wp-content/uploads/2025/11/alex.jpg',
+      bio: 'Specializes in paid advertising and digital marketing to generate high-quality leads for businesses.',
+      image: 'https://peakleads.online/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-19-at-12.47.48_4494f92b-2.jpg',
     },
     {
       name: 'Cullen Diener',
       role: 'Web Developer',
       bio: 'Builds high-converting, performance-optimized websites that turn visitors into customers.',
-      image: 'https://peakleads.online/wp-content/uploads/2025/11/cullen.jpg',
+      image: 'https://peakleads.online/wp-content/uploads/2024/12/CullenDienerPhoto.jpeg',
     },
   ];
 
@@ -37,22 +37,22 @@ export default function About() {
     {
       title: 'Collaboration',
       description: 'We work closely with you to understand your unique needs and deliver customized strategies.',
-      icon: '🤝',
+      icon: 'collaboration',
     },
     {
       title: 'Transparency',
       description: 'Daily updates, clear communication, and honest reporting on every project milestone.',
-      icon: '👁️',
+      icon: 'transparency',
     },
     {
       title: 'Results-Driven',
       description: 'Every decision is made with your bottom line in mind - more leads, higher conversions, better ROI.',
-      icon: '📈',
+      icon: 'results',
     },
     {
       title: 'Excellence',
       description: 'We compete with the largest agencies while delivering personalized attention and quality.',
-      icon: '⭐',
+      icon: 'excellence',
     },
   ];
 
@@ -82,11 +82,7 @@ export default function About() {
               className="text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                About Peak
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                Leads
+                About Peak Leads
               </span>
             </motion.h1>
 
@@ -96,7 +92,7 @@ export default function About() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
-              We partner with plumbing businesses to craft America's best websites and deliver high-quality leads that drive real growth.
+              We partner with ambitious businesses to craft America's best websites and deliver high-quality leads that drive real growth.
             </motion.p>
           </motion.div>
         </div>
@@ -126,15 +122,15 @@ export default function About() {
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Peak Leads was founded with a single mission: to help plumbing businesses rise above the rest through digital excellence.
+                Peak Leads was founded with a single mission: to help businesses rise above the rest through digital excellence.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                What started as a passion project has evolved into a full-service agency competing with the largest web design firms in the industry. Our founder, Bradley Hartmann, brought years of digital marketing expertise and a deep understanding of the plumbing industry's unique challenges.
+                What started as a passion project has evolved into a full-service agency competing with the largest web design firms in the industry. Our founder, Bradley Hartmann, brought years of digital marketing expertise and a deep understanding of the business landscape's unique challenges.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we're proud to work with ambitious plumbing businesses that are ready to scale. We don't just build websites—we build growth engines that generate qualified leads and drive measurable results.
+                Today, we're proud to work with ambitious businesses that are ready to scale. We don't just build websites—we build growth engines that generate qualified leads and drive measurable results.
               </p>
 
               <div className="pt-4">
@@ -155,10 +151,11 @@ export default function About() {
             >
               <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://peakleads.online/wp-content/uploads/2025/11/team-building.jpg"
-                  alt="Peak Leads Team"
+                  src="https://peakleads.online/wp-content/uploads/2024/11/Bradley-Hartmann.jpg"
+                  alt="Bradley Hartmann - Founder"
                   fill
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: '50% 30%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent"></div>
               </div>
@@ -182,11 +179,7 @@ export default function About() {
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                What Drives
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                Us Forward
+                What Drives Us Forward
               </span>
             </h2>
           </motion.div>
@@ -202,7 +195,28 @@ export default function About() {
                 className="group"
               >
                 <div className="relative bg-white hover:bg-gray-50 border border-gray-200/60 rounded-3xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="text-5xl mb-6">{value.icon}</div>
+                  <div className="text-5xl mb-6">
+                    {value.icon === 'collaboration' && (
+                      <svg className="w-12 h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                      </svg>
+                    )}
+                    {value.icon === 'transparency' && (
+                      <svg className="w-12 h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                      </svg>
+                    )}
+                    {value.icon === 'results' && (
+                      <svg className="w-12 h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18 9.41 12l4 4 6.3-6.29L21 12v-6z"/>
+                      </svg>
+                    )}
+                    {value.icon === 'excellence' && (
+                      <svg className="w-12 h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    )}
+                  </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </div>
@@ -227,15 +241,11 @@ export default function About() {
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                Meet the
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                Experts
+                Meet the Experts
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
-              Unstoppable talent dedicated to elevating your plumbing business to new heights.
+              Unstoppable talent dedicated to elevating your business to new heights.
             </p>
           </motion.div>
 
@@ -285,11 +295,7 @@ export default function About() {
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                Proven
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                Results
+                Proven Results
               </span>
             </h2>
           </motion.div>
@@ -298,7 +304,7 @@ export default function About() {
             {[
               {
                 title: 'Specialized Expertise',
-                description: 'We focus exclusively on plumbing businesses, understanding your industry inside and out.',
+                description: 'We focus exclusively on helping service-based businesses succeed, understanding your industry challenges inside and out.',
               },
               {
                 title: 'Transparent Communication',
@@ -376,10 +382,13 @@ export default function About() {
                 </h2>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                  Let's partner together to turn your plumbing business vision into reality. Book a call with our team today.
+                  Let's partner together to turn your business vision into reality. Book a call with our team today.
                 </p>
 
-                <motion.button
+                <motion.a
+                  href="https://calendly.com/bradley-hart/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="group relative inline-block px-12 py-5 rounded-2xl overflow-hidden mt-6"
@@ -388,7 +397,7 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                   <span className="relative text-white font-semibold text-lg tracking-wide">Book A Call</span>
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.div>
