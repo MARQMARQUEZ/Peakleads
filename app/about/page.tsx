@@ -60,6 +60,90 @@ export default function About() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
       <Header />
 
+      {/* Floating Video - Bottom Right */}
+      <motion.a
+        href="#schedule-call"
+        initial={{ opacity: 0, scale: 0.8, y: 100 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1, delay: 2, ease: "easeOut" }}
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group block video-container-hover"
+        onClick={(e) => {
+          e.preventDefault();
+          const section = document.getElementById('schedule-call');
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+        onMouseEnter={() => {
+          const emoji = document.querySelector('.wave-emoji') as HTMLElement;
+          if (emoji) {
+            emoji.classList.remove('waving');
+            void emoji.offsetWidth;
+            emoji.classList.add('waving');
+          }
+        }}
+        onMouseLeave={() => {
+          const emoji = document.querySelector('.wave-emoji') as HTMLElement;
+          if (emoji) {
+            emoji.classList.remove('waving');
+          }
+        }}
+      >
+        {/* Animated glow ring */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-400/40 via-gray-300/30 to-gray-200/20 blur-xl animate-pulse"></div>
+        
+        {/* Outer ring with subtle animation */}
+        <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 opacity-20 animate-spin-slow"></div>
+        
+        {/* Glass frame */}
+        <motion.div 
+          whileHover={{ scale: 1.05 }}
+          className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden cursor-pointer shadow-2xl border-4 border-white/80 backdrop-blur-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+          }}
+        >
+          {/* Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover scale-125 pointer-events-none"
+            style={{ objectPosition: 'center 30%' }}
+          >
+            <source src="/bradley.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Subtle overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-900/10 via-transparent to-white/20 pointer-events-none"></div>
+        </motion.div>
+        
+        {/* Floating "Say Hi!" label - Desktop only */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 3 }}
+          className="hidden md:block absolute -left-12 top-1/3 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg whitespace-nowrap transition-opacity duration-300 cursor-pointer hover-wave-trigger"
+          onMouseEnter={() => {
+            const emoji = document.querySelector('.wave-emoji') as HTMLElement;
+            if (emoji) {
+              emoji.classList.remove('waving');
+              void emoji.offsetWidth;
+              emoji.classList.add('waving');
+            }
+          }}
+          onMouseLeave={() => {
+            const emoji = document.querySelector('.wave-emoji') as HTMLElement;
+            if (emoji) {
+              emoji.classList.remove('waving');
+            }
+          }}
+        >
+          Say Hi! <span className="inline-block wave-emoji">👋</span>
+        </motion.div>
+      </motion.a>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-20">
         {/* Background elements */}
@@ -406,7 +490,7 @@ export default function About() {
       </section>
 
       {/* Calendly Integration Section */}
-      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50">
+      <section id="schedule-call" className="py-24 relative bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Section Header */}
           <motion.div
