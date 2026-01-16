@@ -444,7 +444,7 @@ export default function Home() {
               {[...Array(3)].map((_, setIndex) => (
                 <div key={setIndex} className="flex gap-4 md:gap-6 shrink-0">
                   {/* Image 1 */}
-                  <a href="https://greatergood.co/info" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
+                  <a href="https://greatergood.co/info" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-[640px]">
                     <Image
                       src="/1.png"
                       alt="Portfolio project 1"
@@ -455,7 +455,7 @@ export default function Home() {
                   </a>
 
                   {/* Image 2 */}
-                  <a href="https://andersonroofingrenovations.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
+                  <a href="https://andersonroofingrenovations.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-[640px]">
                     <Image
                       src="/2.png"
                       alt="Portfolio project 2"
@@ -466,7 +466,7 @@ export default function Home() {
                   </a>
 
                   {/* Image 3 */}
-                  <a href="https://waterautomation.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
+                  <a href="https://waterautomation.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-[640px]">
                     <Image
                       src="/3.png"
                       alt="Portfolio project 3"
@@ -477,7 +477,7 @@ export default function Home() {
                   </a>
 
                   {/* Image 4 */}
-                  <a href="https://theleakgeeks.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
+                  <a href="https://theleakgeeks.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-[640px]">
                     <Image
                       src="/4.png"
                       alt="Portfolio project 4"
