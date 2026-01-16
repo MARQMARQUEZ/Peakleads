@@ -154,7 +154,7 @@ export default function Home() {
                   transition={{ delay: 0.4, duration: 0.8 }}
                   className="text-xl text-gray-600 max-w-xl leading-relaxed"
                 >
-                  Transform your business with precision-crafted websites designed for painting, roofing, and plumbing professionals.
+                  Transform your business with precision-crafted websites designed to elevate your brand and drive growth.
                 </motion.p>
               </div>
 
