@@ -30,7 +30,7 @@ export default function Home() {
         initial={{ opacity: 0, scale: 0.8, y: 100 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 2, ease: "easeOut" }}
-        className="fixed bottom-8 right-8 z-50 group block video-container-hover"
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group block video-container-hover"
         onClick={(e) => {
           e.preventDefault();
           const section = document.getElementById('schedule-call');
@@ -39,7 +39,7 @@ export default function Home() {
           }
         }}
         onMouseEnter={() => {
-          const emoji = document.querySelector('.wave-emoji');
+          const emoji = document.querySelector('.wave-emoji') as HTMLElement;
           if (emoji) {
             emoji.classList.remove('waving');
             void emoji.offsetWidth; // Force reflow to restart animation
@@ -47,7 +47,7 @@ export default function Home() {
           }
         }}
         onMouseLeave={() => {
-          const emoji = document.querySelector('.wave-emoji');
+          const emoji = document.querySelector('.wave-emoji') as HTMLElement;
           if (emoji) {
             emoji.classList.remove('waving');
           }
@@ -83,14 +83,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-tr from-gray-900/10 via-transparent to-white/20 pointer-events-none"></div>
         </motion.div>
         
-        {/* Floating "Say Hi!" label */}
+        {/* Floating "Say Hi!" label - Desktop only */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 3 }}
-          className="absolute -left-12 top-1/3 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg whitespace-nowrap transition-opacity duration-300 cursor-pointer hover-wave-trigger"
+          className="hidden md:block absolute -left-12 top-1/3 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg whitespace-nowrap transition-opacity duration-300 cursor-pointer hover-wave-trigger"
           onMouseEnter={() => {
-            const emoji = document.querySelector('.wave-emoji');
+            const emoji = document.querySelector('.wave-emoji') as HTMLElement;
             if (emoji) {
               emoji.classList.remove('waving');
               void emoji.offsetWidth; // Force reflow to restart animation
@@ -98,7 +98,7 @@ export default function Home() {
             }
           }}
           onMouseLeave={() => {
-            const emoji = document.querySelector('.wave-emoji');
+            const emoji = document.querySelector('.wave-emoji') as HTMLElement;
             if (emoji) {
               emoji.classList.remove('waving');
             }
