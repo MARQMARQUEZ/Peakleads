@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { useEffect } from 'react';
@@ -20,8 +21,92 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-x-hidden max-w-full">
       <Header />
+      
+      {/* Floating Video - Bottom Right */}
+      <motion.a
+        href="#schedule-call"
+        initial={{ opacity: 0, scale: 0.8, y: 100 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1, delay: 2, ease: "easeOut" }}
+        className="fixed bottom-8 right-8 z-50 group block video-container-hover"
+        onClick={(e) => {
+          e.preventDefault();
+          const section = document.getElementById('schedule-call');
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+        onMouseEnter={() => {
+          const emoji = document.querySelector('.wave-emoji');
+          if (emoji) {
+            emoji.classList.remove('waving');
+            void emoji.offsetWidth; // Force reflow to restart animation
+            emoji.classList.add('waving');
+          }
+        }}
+        onMouseLeave={() => {
+          const emoji = document.querySelector('.wave-emoji');
+          if (emoji) {
+            emoji.classList.remove('waving');
+          }
+        }}
+      >
+        {/* Animated glow ring */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-400/40 via-gray-300/30 to-gray-200/20 blur-xl animate-pulse"></div>
+        
+        {/* Outer ring with subtle animation */}
+        <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 opacity-20 animate-spin-slow"></div>
+        
+        {/* Glass frame */}
+        <motion.div 
+          whileHover={{ scale: 1.05 }}
+          className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden cursor-pointer shadow-2xl border-4 border-white/80 backdrop-blur-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+          }}
+        >
+          {/* Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover scale-125 pointer-events-none"
+            style={{ objectPosition: 'center 30%' }}
+          >
+            <source src="/bradley.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Subtle overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-900/10 via-transparent to-white/20 pointer-events-none"></div>
+        </motion.div>
+        
+        {/* Floating "Say Hi!" label */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 3 }}
+          className="absolute -left-12 top-1/3 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg whitespace-nowrap transition-opacity duration-300 cursor-pointer hover-wave-trigger"
+          onMouseEnter={() => {
+            const emoji = document.querySelector('.wave-emoji');
+            if (emoji) {
+              emoji.classList.remove('waving');
+              void emoji.offsetWidth; // Force reflow to restart animation
+              emoji.classList.add('waving');
+            }
+          }}
+          onMouseLeave={() => {
+            const emoji = document.querySelector('.wave-emoji');
+            if (emoji) {
+              emoji.classList.remove('waving');
+            }
+          }}
+        >
+          Say Hi! <span className="inline-block wave-emoji">👋</span>
+        </motion.div>
+      </motion.a>
       
       {/* Hero Section + Benefits (combined for seamless blend) */}
       <section className="relative overflow-hidden pt-20">
@@ -37,8 +122,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto w-full">
+        <div className="relative z-10 container mx-auto px-4 py-20 lg:py-10 min-h-screen flex items-center overflow-visible">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto w-full overflow-visible">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -94,14 +179,15 @@ export default function Home() {
                   <span className="relative text-white font-semibold tracking-wide">Book A Call</span>
                 </motion.a>
                 
-                <motion.a
-                  href="/about"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-white/80 backdrop-blur-xl border border-gray-200/60 text-gray-800 font-semibold rounded-2xl hover:bg-white/90 transition-all shadow-lg shadow-gray-900/5 inline-block"
-                >
-                  Learn More
-                </motion.a>
+                <Link href="/about">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 bg-white/80 backdrop-blur-xl border border-gray-200/60 text-gray-800 font-semibold rounded-2xl hover:bg-white/90 transition-all shadow-lg shadow-gray-900/5 inline-block cursor-pointer"
+                  >
+                    Learn More
+                  </motion.div>
+                </Link>
               </motion.div>
 
             </motion.div>
@@ -111,7 +197,8 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center mx-auto"
+              style={{ overflow: 'visible' }}
             >
               {/* Subtle glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-300/20 to-gray-400/10 rounded-full blur-3xl"></div>
@@ -120,15 +207,17 @@ export default function Home() {
               <motion.div 
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-full overflow-hidden cursor-pointer"
+                className="relative z-10 w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-full overflow-visible cursor-pointer mx-auto"
+                style={{ borderRadius: '50%', overflow: 'visible' }}
               >
                 <Image
-                  src="https://peakleads.online/wp-content/uploads/2025/11/image1.png"
+                  src="https://peakleads.online/wp-content/uploads/2025/11/image1.png?v=2"
                   alt="PeakLeads Hero"
                   width={800}
                   height={800}
                   priority
-                  className="w-full h-full object-cover drop-shadow-2xl"
+                  className="w-full h-full object-cover drop-shadow-2xl rounded-full"
+                  style={{ borderRadius: '50%' }}
                 />
               </motion.div>
             </motion.div>
@@ -149,12 +238,25 @@ export default function Home() {
               Benefits
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                Why Fast-Moving Founders
+              {/* Mobile heading */}
+              <span className="md:hidden">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                  Serious Founders
+                </span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                  Pick Us
+                </span>
               </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                Pick Us
+              {/* Desktop heading */}
+              <span className="hidden md:inline">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                  Why Fast-Moving Founders
+                </span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                  Pick Us
+                </span>
               </span>
             </h2>
           </motion.div>
@@ -325,7 +427,7 @@ export default function Home() {
           <div className="relative overflow-hidden">
             {/* Sliding Track */}
             <motion.div
-              className="flex gap-6"
+              className="flex gap-4 md:gap-6"
               animate={{
                 x: [0, -2584],
               }}
@@ -340,48 +442,48 @@ export default function Home() {
             >
               {/* Duplicate the images multiple times for seamless loop */}
               {[...Array(3)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-6 shrink-0">
+                <div key={setIndex} className="flex gap-4 md:gap-6 shrink-0">
                   {/* Image 1 */}
-                  <a href="https://greatergood.co/info" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                  <a href="https://greatergood.co/info" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
                     <Image
                       src="/1.png"
                       alt="Portfolio project 1"
                       width={640}
                       height={360}
-                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03] w-full h-auto"
                     />
                   </a>
 
                   {/* Image 2 */}
-                  <a href="https://andersonroofingrenovations.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                  <a href="https://andersonroofingrenovations.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
                     <Image
                       src="/2.png"
                       alt="Portfolio project 2"
                       width={640}
                       height={360}
-                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03] w-full h-auto"
                     />
                   </a>
 
                   {/* Image 3 */}
-                  <a href="https://waterautomation.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                  <a href="https://waterautomation.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
                     <Image
                       src="/3.png"
                       alt="Portfolio project 3"
                       width={640}
                       height={360}
-                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03] w-full h-auto"
                     />
                   </a>
 
                   {/* Image 4 */}
-                  <a href="https://theleakgeeks.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl">
+                  <a href="https://theleakgeeks.com/" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-2xl w-[360px] md:w-auto">
                     <Image
                       src="/4.png"
                       alt="Portfolio project 4"
                       width={640}
                       height={360}
-                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03]"
+                      className="cursor-pointer transition-transform duration-700 ease-out hover:scale-[1.03] w-full h-auto"
                     />
                   </a>
                 </div>
@@ -575,7 +677,7 @@ export default function Home() {
       </div>
 
       {/* Calendly Integration Section */}
-      <section className="py-24 relative bg-gradient-to-b from-gray-50 to-white">
+      <section id="schedule-call" className="py-24 relative bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Section Header */}
           <motion.div

@@ -405,58 +405,51 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-white via-gray-50 to-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
+      {/* Calendly Integration Section */}
+      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Section Header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            {/* Glass Card */}
-            <div 
-              className="relative bg-white/70 backdrop-blur-2xl border border-gray-200/80 rounded-[32px] p-8 md:p-16 shadow-xl shadow-gray-900/5 text-center"
-              style={{
-                backdropFilter: 'blur(40px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-              }}
-            >
-              {/* Inner shine */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent rounded-t-[32px]"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent rounded-[32px] pointer-events-none"></div>
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Schedule A Call
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                Let's Talk About
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                Your Project
+              </span>
+            </h2>
+          </motion.div>
 
-              <div className="relative z-10 space-y-8">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                    Ready to
-                  </span>
-                  <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                    Grow?
-                  </span>
-                </h2>
-
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                  Let's partner together to turn your business vision into reality. Book a call with our team today.
-                </p>
-
-                <motion.a
-                  href="https://calendly.com/bradley-hart/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative inline-block px-12 py-5 rounded-2xl overflow-hidden mt-6"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  <span className="relative text-white font-semibold text-lg tracking-wide">Book A Call</span>
-                </motion.a>
-              </div>
-            </div>
+          {/* Calendly Embed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative border border-gray-200/80 rounded-[32px] shadow-xl shadow-gray-900/5 overflow-hidden"
+            style={{
+              height: '850px'
+            }}
+          >
+            {/* Calendly iframe */}
+            <iframe 
+              src="https://calendly.com/bradley-hart/30min" 
+              width="100%" 
+              height="100%" 
+              frameBorder="0"
+              title="Select a Date & Time - Calendly"
+              className="rounded-[32px]"
+            />
           </motion.div>
         </div>
       </section>
