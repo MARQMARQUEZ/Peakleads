@@ -9,17 +9,17 @@ const services = [
   {
     id: 1,
     title: 'Website Design & Development',
-    subtitle: 'Building a Strong Online Presence for Your Business',
-    description: 'We design and develop custom websites tailored specifically for your industry, creating a user-friendly, professional digital hub that showcases your expertise and services. Each site we build is optimized to attract local customers and highlight your unique offerings.',
+    subtitle: 'Building a Strong Online Presence',
+    description: 'Custom websites tailored for your industry, creating a professional digital hub that showcases your expertise and attracts local customers.',
     cta: 'Build An Online Presence',
     features: ['Mobile-Responsive Design', 'SEO Optimized', 'Fast Loading Times', 'User-Friendly Interface'],
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80',
   },
   {
     id: 2,
-    title: 'Local Service Ads',
-    subtitle: 'Targeted Leads for Your Services Made Easy',
-    description: 'With our expertise in Local Service Ads, we ensure that your business is front and center when local customers search for services. Our approach focuses on getting high-quality leads for jobs in your area, driving more qualified prospects to your business.',
+    title: 'Local Service Ads Management',
+    subtitle: 'Targeted Leads for Your Services',
+    description: 'Get your business front and center when local customers search for services. Drive high-quality leads for jobs in your area with optimized campaigns.',
     cta: 'Get Local Leads Fast',
     features: ['High-Quality Leads', 'Local Targeting', 'Quick Response Setup', 'Performance Tracking'],
     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80',
@@ -27,8 +27,8 @@ const services = [
   {
     id: 3,
     title: 'SEO (Search Engine Optimization)',
-    subtitle: 'Rank Higher and Reach Local Customers Searching for Your Services',
-    description: 'Through our industry-focused SEO strategies, we enhance your website\'s visibility in local search results. We prioritize keywords, optimize content, and build high-value backlinks specific to your industry to ensure you appear at the top when potential customers are searching.',
+    subtitle: 'Rank Higher in Local Search',
+    description: 'Enhance your visibility in local search results with industry-focused SEO strategies. Appear at the top when potential customers are searching.',
     cta: 'Rank Higher Now',
     features: ['Keyword Research', 'Content Optimization', 'Local SEO', 'Backlink Building'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
@@ -37,16 +37,16 @@ const services = [
     id: 4,
     title: 'Paid Advertising: Google & Meta Ads',
     subtitle: 'Attracting Customers with Targeted Ads',
-    description: 'Our Google and Meta Ads strategies are customized to your industry, focusing on high-intent keywords and precise local targeting. We design campaigns that increase visibility among people looking for your services, maximizing your ad spend and turning clicks into customers.',
+    description: 'Customized ad campaigns focusing on high-intent keywords and precise local targeting. Maximize your ad spend effectively and turn clicks into customers.',
     cta: 'Turn Clicks into Clients',
     features: ['Google Ads Management', 'Meta Ads Campaigns', 'High-Intent Targeting', 'ROI Optimization'],
     image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&q=80',
   },
   {
     id: 5,
-    title: 'Social Media Management',
-    subtitle: 'Building a Trustworthy Social Presence for Your Brand',
-    description: 'Connect with your community and build brand trust on social media. We create engaging, industry-focused content that highlights your skills, shares valuable tips, and showcases your completed projects to establish your business as a go-to expert.',
+    title: 'Social Media Management & Strategy',
+    subtitle: 'Building Your Brand Presence',
+    description: 'Connect with your community and build brand trust on social media. Create engaging content that highlights your skills and establishes you as an industry expert.',
     cta: 'Grow Your Following',
     features: ['Content Creation', 'Community Engagement', 'Brand Building', 'Analytics & Reporting'],
     image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=1200&q=80',
@@ -181,97 +181,120 @@ export default function Services() {
             </h2>
           </motion.div>
 
-          {/* Services - Alternating Layout */}
-          <div className="space-y-20">
-            {services.map((service, index) => (
+          {/* Services Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+            {services.slice(0, 3).map((service, index) => (
               <motion.div
                 key={service.id}
-                id={
-                  service.id === 1 ? 'web-design' : 
-                  service.id === 2 ? 'lead-generation' : 
-                  service.id === 3 ? 'seo-optimization' : 
-                  undefined
-                }
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                }`}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative"
               >
-                {/* Content */}
-                <div className={`space-y-8 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div>
-                    <h3 className="text-3xl md:text-4xl font-black text-gray-900">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-500 mt-2">{service.subtitle}</p>
-                  </div>
-
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-4">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <svg
-                          className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-700 font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA Button */}
-                  <a href="https://calendly.com/bradley-hart/30min" target="_blank" rel="noopener noreferrer">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="group relative px-8 py-4 rounded-2xl overflow-hidden w-fit"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                      <span className="relative text-white font-semibold tracking-wide">
-                        {service.cta}
-                      </span>
-                    </motion.button>
-                  </a>
-                </div>
-
-                {/* Image */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}
-                >
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl">
+                  {/* Image Section - 40% */}
+                  <div className="relative h-56 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={600}
-                      height={500}
-                      className="w-full h-auto object-cover"
+                      height={400}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
                   </div>
-                </motion.div>
+                  
+                  {/* Content - 60% */}
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                    <p className="text-sm text-gray-500 mb-4">{service.subtitle}</p>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2.5">
+                      {service.features.map((feature, i) => (
+                        <div key={i} className="flex items-center gap-2.5">
+                          <svg
+                            className="w-4 h-4 text-gray-900 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2.5}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Second Row - Centered */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto mt-6 lg:mt-8">
+            {services.slice(3, 5).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="group relative"
+              >
+                <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl">
+                  {/* Image Section - 40% */}
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+                  </div>
+                  
+                  {/* Content - 60% */}
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                    <p className="text-sm text-gray-500 mb-4">{service.subtitle}</p>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2.5">
+                      {service.features.map((feature, i) => (
+                        <div key={i} className="flex items-center gap-2.5">
+                          <svg
+                            className="w-4 h-4 text-gray-900 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2.5}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -279,7 +302,7 @@ export default function Services() {
       </section>
 
       {/* Glass Marquee Separator */}
-      <div className="py-6 overflow-hidden bg-white">
+      <div className="py-6 overflow-hidden bg-gray-50">
         <motion.div
           className="flex shrink-0"
           animate={{ x: ['0%', '-50%'] }}
@@ -316,7 +339,7 @@ export default function Services() {
       </div>
 
       {/* Why Choose Us Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+      <section className="relative py-24 md:py-32 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -373,7 +396,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="relative py-24 md:py-32 bg-white">
+      <section className="relative py-24 md:py-32 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -398,7 +421,7 @@ export default function Services() {
           </motion.div>
 
           {/* Process Steps */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 relative">
             {[
               {
                 step: '01',
@@ -424,21 +447,21 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl overflow-hidden p-8 md:p-10 h-full">
+                <div className="bg-white hover:bg-gray-50 border border-gray-200/60 rounded-3xl overflow-hidden p-8 md:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <div className="mb-6">
-                    <div className="inline-block text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-400">
+                    <div className="inline-block text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
                       {item.step}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
 
-                {/* Connector Arrow */}
+                {/* Connector Arrow - Centered between cards */}
                 {index < 2 && (
-                  <div className="hidden md:flex absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 w-12 lg:w-16 justify-center items-center z-10">
                     <svg
-                      className="w-8 h-8 text-gray-400"
+                      className="w-8 h-8 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -459,7 +482,7 @@ export default function Services() {
       </section>
 
       {/* Calendly Integration Section */}
-      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50">
+      <section className="py-24 relative bg-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Section Header */}
           <motion.div
