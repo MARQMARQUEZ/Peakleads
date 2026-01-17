@@ -558,11 +558,20 @@ export default function Home() {
             ></motion.div>
             
             {/* Inner content wrapper with glass effect */}
-            <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl" style={{
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset'
-            }}>
+            <div 
+              className="relative rounded-3xl overflow-hidden shadow-2xl transition-colors duration-500"
+              style={{
+                backgroundColor: isVSLPlaying ? '#ffffff' : '#000000',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset'
+              }}
+            >
               {/* Video container */}
-              <div className="relative aspect-video bg-white">
+              <div 
+                className="relative aspect-video transition-colors duration-500"
+                style={{
+                  backgroundColor: isVSLPlaying ? '#ffffff' : '#000000',
+                }}
+              >
                 <video
                   id="vsl-video"
                   controls
