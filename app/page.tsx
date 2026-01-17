@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { useEffect } from 'react';
 import { trackCallScheduled } from '@/utils/metaPixel';
+import React from 'react';
 
 export default function Home() {
   // Handle smooth scroll to testimonials on page load if hash is present
@@ -22,6 +23,9 @@ export default function Home() {
     }
   }, []);
 
+  // Track VSL video playing state
+  const [isVSLPlaying, setIsVSLPlaying] = React.useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-x-hidden max-w-full">
       <Header />
@@ -30,8 +34,13 @@ export default function Home() {
       <motion.a
         href="#schedule-call"
         initial={{ opacity: 0, scale: 0.8, y: 100 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2, ease: "easeOut" }}
+        animate={{ 
+          opacity: isVSLPlaying ? 0 : 1, 
+          scale: isVSLPlaying ? 0.8 : 1, 
+          y: isVSLPlaying ? 100 : 0 
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        style={{ pointerEvents: isVSLPlaying ? 'none' : 'auto' }}
         className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group block video-container-hover"
         onClick={(e) => {
           e.preventDefault();
@@ -557,11 +566,15 @@ export default function Home() {
               {/* Video container */}
               <div className="relative aspect-video bg-black">
                 <video
+                  id="vsl-video"
                   controls
                   playsInline
                   preload="metadata"
                   className="w-full h-full object-contain relative z-10"
                   poster="/Peakleads.png"
+                  onPlay={() => setIsVSLPlaying(true)}
+                  onPause={() => setIsVSLPlaying(false)}
+                  onEnded={() => setIsVSLPlaying(false)}
                 >
                   <source src="/Landing Page VSL.MOV" type="video/mp4" />
                   Your browser does not support the video tag.
