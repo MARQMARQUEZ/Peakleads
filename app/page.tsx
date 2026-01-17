@@ -5,7 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { useEffect } from 'react';
+import { trackCallScheduled } from '@/utils/metaPixel';
 
 export default function Home() {
   // Handle smooth scroll to testimonials on page load if hash is present
@@ -33,6 +35,7 @@ export default function Home() {
         className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group block video-container-hover"
         onClick={(e) => {
           e.preventDefault();
+          trackCallScheduled('floating_video_button');
           const section = document.getElementById('schedule-call');
           if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -169,6 +172,7 @@ export default function Home() {
                   href="https://calendly.com/bradley-hart/30min"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackCallScheduled('hero_button')}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="group relative px-8 py-4 rounded-2xl overflow-hidden inline-block"
@@ -394,6 +398,177 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* VSL Video Section */}
+      <section className="py-24 relative bg-white overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Why Our Team
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                This is how
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                We Build
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Video with Animated Border - Apple-level Premium */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative max-w-5xl mx-auto group"
+            onMouseMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+              e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+            }}
+          >
+            {/* Outer glow ambient light */}
+            <div 
+              className="absolute -inset-8 rounded-[40px] blur-3xl animate-pulse-glow pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(229, 231, 235, 0.1), rgba(255, 255, 255, 0.2))',
+              }}
+            ></div>
+            
+            {/* Metallic base layer with gradient */}
+            <div 
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none animate-gradient-shift"
+              style={{
+                background: 'linear-gradient(135deg, #374151 0%, #6b7280 25%, #9ca3af 50%, #6b7280 75%, #374151 100%)',
+                backgroundSize: '200% 200%',
+              }}
+            ></div>
+            
+            {/* Reflective silver layer */}
+            <div 
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-60"
+              style={{
+                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), transparent 50%, rgba(255, 255, 255, 0.1))',
+              }}
+            ></div>
+            
+            {/* Animated shimmer effect */}
+            <div className="absolute -inset-[4px] rounded-[28px] overflow-hidden pointer-events-none">
+              <div 
+                className="absolute -inset-[100%] animate-shimmer"
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)',
+                  width: '50%',
+                  height: '200%',
+                }}
+              ></div>
+            </div>
+            
+            {/* Precision inner border */}
+            <div 
+              className="absolute -inset-[3px] rounded-[27px] pointer-events-none animate-border-flow"
+              style={{
+                background: 'linear-gradient(135deg, #e5e7eb, #ffffff, #d1d5db, #ffffff, #e5e7eb)',
+                backgroundSize: '300% 300%',
+              }}
+            ></div>
+            
+            {/* Auto-animating spotlight with enhanced glow */}
+            <div 
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none group-hover:opacity-0 transition-opacity duration-500 animate-border-spotlight"
+              style={{
+                background: 'radial-gradient(circle 200px at 50% 50%, rgba(255, 255, 255, 1), rgba(240, 240, 240, 0.9) 25%, rgba(200, 200, 200, 0.5) 45%, rgba(150, 150, 150, 0.2) 65%, transparent 85%)',
+                backgroundSize: '200% 200%',
+                filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 90px rgba(200, 200, 200, 0.4))',
+              }}
+            ></div>
+            
+            {/* Cursor-following interactive glow */}
+            <div 
+              className="absolute -inset-[4px] rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 1), rgba(245, 245, 245, 0.95) 20%, rgba(230, 230, 230, 0.7) 35%, rgba(200, 200, 200, 0.4) 50%, rgba(150, 150, 150, 0.2) 70%, transparent 100%)',
+                filter: 'drop-shadow(0 0 35px rgba(255, 255, 255, 1)) drop-shadow(0 0 70px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 100px rgba(230, 230, 230, 0.5))',
+              }}
+            ></div>
+            
+            {/* Subtle edge highlights */}
+            <div 
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-40"
+              style={{
+                background: 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)',
+                backgroundSize: '200% 100%',
+                backgroundPosition: '0% 0%',
+              }}
+            ></div>
+            
+            {/* Floating particles effect */}
+            <motion.div
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -top-12 -right-12 w-40 h-40 rounded-full blur-3xl pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(229, 231, 235, 0.2))',
+              }}
+            ></motion.div>
+            
+            <motion.div
+              animate={{
+                opacity: [0.2, 0.5, 0.2],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5,
+              }}
+              className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full blur-3xl pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom right, rgba(229, 231, 235, 0.2), rgba(255, 255, 255, 0.3))',
+              }}
+            ></motion.div>
+            
+            {/* Inner content wrapper with glass effect */}
+            <div className="relative bg-black rounded-3xl overflow-hidden shadow-2xl" style={{
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset'
+            }}>
+              {/* Video container */}
+              <div className="relative aspect-video bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain relative z-10"
+                  poster="/Peakleads.png"
+                >
+                  <source src="/Landing Page VSL.MOV" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -640,7 +815,7 @@ export default function Home() {
       </section>
 
       {/* Glass Marquee Separator */}
-      <div className="py-6 overflow-hidden">
+      <div className="py-6 overflow-hidden bg-white">
         <motion.div
           className="flex shrink-0"
           animate={{ x: ['0%', '-50%'] }}
@@ -709,17 +884,14 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative border border-gray-200/80 rounded-[32px] shadow-xl shadow-gray-900/5 overflow-hidden"
             style={{
-              height: '850px'
+              height: '850px',
+              minHeight: '850px'
             }}
           >
-            {/* Calendly iframe */}
-            <iframe 
-              src="https://calendly.com/bradley-hart/30min" 
-              width="100%" 
-              height="100%" 
-              frameBorder="0"
-              title="Select a Date & Time - Calendly"
-              className="rounded-[32px]"
+            {/* Calendly Widget with Event Tracking */}
+            <CalendlyEmbed 
+              url="https://calendly.com/bradley-hart/30min?hide_gdpr_banner=1" 
+              source="calendly_embed"
             />
           </motion.div>
         </div>
@@ -870,7 +1042,14 @@ export default function Home() {
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent rounded-t-[32px]"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent rounded-[32px] pointer-events-none"></div>
 
-                <form className="relative z-10 space-y-6">
+                <form 
+                  className="relative z-10 space-y-6"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    trackCallScheduled('contact_form');
+                    // Add your form submission logic here
+                  }}
+                >
                   {/* Name */}
                   <div>
                     <input

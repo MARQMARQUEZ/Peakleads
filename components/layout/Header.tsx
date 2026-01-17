@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { trackCallScheduled } from '@/utils/metaPixel';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,6 +95,7 @@ export default function Header() {
               href="https://calendly.com/bradley-hart/30min"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCallScheduled('header_button')}
               className="relative group flex items-center gap-2 px-5 py-2.5 rounded-full overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
