@@ -460,7 +460,7 @@ export default function Home() {
             
             {/* Metallic base layer with gradient */}
             <div 
-              className="absolute -inset-[4px] rounded-[28px] pointer-events-none animate-gradient-shift"
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none animate-gradient-shift opacity-30"
               style={{
                 background: 'linear-gradient(135deg, #374151 0%, #6b7280 25%, #9ca3af 50%, #6b7280 75%, #374151 100%)',
                 backgroundSize: '200% 200%',
@@ -469,18 +469,18 @@ export default function Home() {
             
             {/* Reflective silver layer */}
             <div 
-              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-60"
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-20"
               style={{
                 background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), transparent 50%, rgba(255, 255, 255, 0.1))',
               }}
             ></div>
             
             {/* Animated shimmer effect */}
-            <div className="absolute -inset-[4px] rounded-[28px] overflow-hidden pointer-events-none">
+            <div className="absolute -inset-[4px] rounded-[28px] overflow-hidden pointer-events-none opacity-40">
               <div 
                 className="absolute -inset-[100%] animate-shimmer"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)',
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
                   width: '50%',
                   height: '200%',
                 }}
@@ -489,7 +489,7 @@ export default function Home() {
             
             {/* Precision inner border */}
             <div 
-              className="absolute -inset-[3px] rounded-[27px] pointer-events-none animate-border-flow"
+              className="absolute -inset-[2px] rounded-[27px] pointer-events-none animate-border-flow opacity-25"
               style={{
                 background: 'linear-gradient(135deg, #e5e7eb, #ffffff, #d1d5db, #ffffff, #e5e7eb)',
                 backgroundSize: '300% 300%',
@@ -517,11 +517,9 @@ export default function Home() {
             
             {/* Subtle edge highlights */}
             <div 
-              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-40"
+              className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-15"
               style={{
-                background: 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)',
-                backgroundSize: '200% 100%',
-                backgroundPosition: '0% 0%',
+                background: 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%)',
               }}
             ></div>
             
