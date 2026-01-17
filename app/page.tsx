@@ -454,7 +454,7 @@ export default function Home() {
             <div 
               className="absolute -inset-8 rounded-[40px] blur-3xl animate-pulse-glow pointer-events-none"
               style={{
-                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(229, 231, 235, 0.1), rgba(255, 255, 255, 0.2))',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(229, 231, 235, 0.1), rgba(255, 255, 255, 0.2))',
               }}
             ></div>
             
@@ -462,7 +462,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[4px] rounded-[28px] pointer-events-none animate-gradient-shift opacity-30"
               style={{
-                background: 'linear-gradient(135deg, #374151 0%, #6b7280 25%, #9ca3af 50%, #6b7280 75%, #374151 100%)',
+                backgroundImage: 'linear-gradient(135deg, #374151 0%, #6b7280 25%, #9ca3af 50%, #6b7280 75%, #374151 100%)',
                 backgroundSize: '200% 200%',
               }}
             ></div>
@@ -471,7 +471,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-20"
               style={{
-                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), transparent 50%, rgba(255, 255, 255, 0.1))',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), transparent 50%, rgba(255, 255, 255, 0.1))',
               }}
             ></div>
             
@@ -480,7 +480,7 @@ export default function Home() {
               <div 
                 className="absolute -inset-[100%] animate-shimmer"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
+                  backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
                   width: '50%',
                   height: '200%',
                 }}
@@ -491,7 +491,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[2px] rounded-[27px] pointer-events-none animate-border-flow opacity-25"
               style={{
-                background: 'linear-gradient(135deg, #e5e7eb, #ffffff, #d1d5db, #ffffff, #e5e7eb)',
+                backgroundImage: 'linear-gradient(135deg, #e5e7eb, #ffffff, #d1d5db, #ffffff, #e5e7eb)',
                 backgroundSize: '300% 300%',
               }}
             ></div>
@@ -500,7 +500,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[4px] rounded-[28px] pointer-events-none group-hover:opacity-0 transition-opacity duration-500 animate-border-spotlight"
               style={{
-                background: 'radial-gradient(circle 200px at 50% 50%, rgba(255, 255, 255, 1), rgba(240, 240, 240, 0.9) 25%, rgba(200, 200, 200, 0.5) 45%, rgba(150, 150, 150, 0.2) 65%, transparent 85%)',
+                backgroundImage: 'radial-gradient(circle 200px at 50% 50%, rgba(255, 255, 255, 1), rgba(240, 240, 240, 0.9) 25%, rgba(200, 200, 200, 0.5) 45%, rgba(150, 150, 150, 0.2) 65%, transparent 85%)',
                 backgroundSize: '200% 200%',
                 filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 90px rgba(200, 200, 200, 0.4))',
               }}
@@ -510,7 +510,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[4px] rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{
-                background: 'radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 1), rgba(245, 245, 245, 0.95) 20%, rgba(230, 230, 230, 0.7) 35%, rgba(200, 200, 200, 0.4) 50%, rgba(150, 150, 150, 0.2) 70%, transparent 100%)',
+                backgroundImage: 'radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 1), rgba(245, 245, 245, 0.95) 20%, rgba(230, 230, 230, 0.7) 35%, rgba(200, 200, 200, 0.4) 50%, rgba(150, 150, 150, 0.2) 70%, transparent 100%)',
                 filter: 'drop-shadow(0 0 35px rgba(255, 255, 255, 1)) drop-shadow(0 0 70px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 100px rgba(230, 230, 230, 0.5))',
               }}
             ></div>
@@ -519,7 +519,7 @@ export default function Home() {
             <div 
               className="absolute -inset-[4px] rounded-[28px] pointer-events-none opacity-15"
               style={{
-                background: 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%)',
+                backgroundImage: 'linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%)',
               }}
             ></div>
             
@@ -536,7 +536,7 @@ export default function Home() {
               }}
               className="absolute -top-12 -right-12 w-40 h-40 rounded-full blur-3xl pointer-events-none"
               style={{
-                background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(229, 231, 235, 0.2))',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(229, 231, 235, 0.2))',
               }}
             ></motion.div>
             
@@ -553,7 +553,7 @@ export default function Home() {
               }}
               className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full blur-3xl pointer-events-none"
               style={{
-                background: 'linear-gradient(to bottom right, rgba(229, 231, 235, 0.2), rgba(255, 255, 255, 0.3))',
+                backgroundImage: 'linear-gradient(to bottom right, rgba(229, 231, 235, 0.2), rgba(255, 255, 255, 0.3))',
               }}
             ></motion.div>
             
