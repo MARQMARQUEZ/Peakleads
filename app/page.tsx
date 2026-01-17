@@ -413,7 +413,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
-              Why Our Team
+              Why Our Team?
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
