@@ -464,13 +464,13 @@ export default function Home() {
             </motion.a>
           </motion.div>
 
-          {/* Get Started Now Button */}
+          {/* Get Started Now Button - Mobile Only */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 flex justify-center px-4"
+            className="mt-6 flex justify-center px-4 md:hidden"
           >
             <motion.a 
               href="#schedule-call"
@@ -484,7 +484,7 @@ export default function Home() {
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative group inline-flex items-center justify-center cursor-pointer px-6 md:px-8 py-3 md:py-4 rounded-full bg-black shadow-lg shadow-black/5 border border-black hover:bg-gray-900 hover:shadow-xl hover:shadow-black/20 transition-all duration-500 w-full md:w-auto"
+              className="relative group inline-flex items-center justify-center cursor-pointer px-6 py-3 rounded-full bg-black shadow-lg shadow-black/5 border border-black hover:bg-gray-900 hover:shadow-xl hover:shadow-black/20 transition-all duration-500 w-full"
               style={{
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
@@ -494,7 +494,7 @@ export default function Home() {
               {/* Inner shine effect - matching the review badge style */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-full pointer-events-none"></div>
               
-              <span className="relative text-xs md:text-sm font-black tracking-tight text-white">
+              <span className="relative text-xs font-black tracking-tight text-white">
                 GET STARTED NOW
               </span>
             </motion.a>
