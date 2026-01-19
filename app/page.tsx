@@ -424,7 +424,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 flex justify-center"
+            className="mt-12 flex justify-center px-4"
           >
             <motion.a 
               href="#testimonials"
@@ -437,27 +437,27 @@ export default function Home() {
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative group inline-flex items-center justify-center cursor-pointer px-8 py-4 rounded-full bg-white/70 shadow-lg shadow-black/5 border border-white/60 hover:bg-white/90 hover:shadow-xl hover:shadow-black/10 hover:border-gray-200/60 transition-all duration-500"
+              className="relative group inline-flex items-center justify-center cursor-pointer px-6 md:px-8 py-3 md:py-4 rounded-full bg-white/70 shadow-lg shadow-black/5 border border-white/60 hover:bg-white/90 hover:shadow-xl hover:shadow-black/10 hover:border-gray-200/60 transition-all duration-500 w-full md:w-auto"
               style={{
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
-                width: '375px',
+                maxWidth: '375px',
               }}
             >
               {/* Inner shine effect - exactly like header */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent rounded-full pointer-events-none"></div>
               
-              <div className="relative flex items-center gap-3">
+              <div className="relative flex items-center gap-2 md:gap-3">
                 {/* Star rating */}
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current drop-shadow-sm" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
                   ))}
                 </div>
                 {/* Rating text - matching Benefits section gradient text */}
-                <span className="text-sm font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                <span className="text-xs md:text-sm font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
                   4.9/5 OUT OF 70+ REVIEWS
                 </span>
               </div>
@@ -470,7 +470,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 flex justify-center"
+            className="mt-6 flex justify-center px-4"
           >
             <motion.a 
               href="#schedule-call"
@@ -484,17 +484,17 @@ export default function Home() {
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative group inline-flex items-center justify-center cursor-pointer px-8 py-4 rounded-full bg-black shadow-lg shadow-black/5 border border-black hover:bg-gray-900 hover:shadow-xl hover:shadow-black/20 transition-all duration-500"
+              className="relative group inline-flex items-center justify-center cursor-pointer px-6 md:px-8 py-3 md:py-4 rounded-full bg-black shadow-lg shadow-black/5 border border-black hover:bg-gray-900 hover:shadow-xl hover:shadow-black/20 transition-all duration-500 w-full md:w-auto"
               style={{
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
-                width: '375px',
+                maxWidth: '375px',
               }}
             >
               {/* Inner shine effect - matching the review badge style */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-full pointer-events-none"></div>
               
-              <span className="relative text-sm font-black tracking-tight text-white">
+              <span className="relative text-xs md:text-sm font-black tracking-tight text-white">
                 GET STARTED NOW
               </span>
             </motion.a>
