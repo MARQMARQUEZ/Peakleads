@@ -437,10 +437,11 @@ export default function Home() {
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative group block cursor-pointer px-8 py-4 rounded-full bg-white/70 shadow-lg shadow-black/5 border border-white/60 hover:bg-white/90 hover:shadow-xl hover:shadow-black/10 hover:border-gray-200/60 transition-all duration-500"
+              className="relative group inline-flex items-center justify-center cursor-pointer px-8 py-4 rounded-full bg-white/70 shadow-lg shadow-black/5 border border-white/60 hover:bg-white/90 hover:shadow-xl hover:shadow-black/10 hover:border-gray-200/60 transition-all duration-500"
               style={{
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
+                width: '375px',
               }}
             >
               {/* Inner shine effect - exactly like header */}
@@ -460,6 +461,42 @@ export default function Home() {
                   4.9/5 OUT OF 70+ REVIEWS
                 </span>
               </div>
+            </motion.a>
+          </motion.div>
+
+          {/* Get Started Now Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-6 flex justify-center"
+          >
+            <motion.a 
+              href="#schedule-call"
+              onClick={(e) => {
+                e.preventDefault();
+                trackCallScheduled('video_section_button');
+                const section = document.getElementById('schedule-call');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative group inline-flex items-center justify-center cursor-pointer px-8 py-4 rounded-full bg-black shadow-lg shadow-black/5 border border-black hover:bg-gray-900 hover:shadow-xl hover:shadow-black/20 transition-all duration-500"
+              style={{
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                width: '375px',
+              }}
+            >
+              {/* Inner shine effect - matching the review badge style */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-full pointer-events-none"></div>
+              
+              <span className="relative text-sm font-black tracking-tight text-white">
+                GET STARTED NOW
+              </span>
             </motion.a>
           </motion.div>
         </div>
