@@ -404,9 +404,8 @@ export default function Home() {
                   id="vsl-video"
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   className="w-full h-full object-contain relative z-10"
-                  poster="/Peakleads.png"
                   onPlay={() => setIsVSLPlaying(true)}
                   onPause={() => setIsVSLPlaying(false)}
                   onEnded={() => setIsVSLPlaying(false)}
@@ -499,180 +498,6 @@ export default function Home() {
               </span>
             </motion.a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 relative bg-white overflow-hidden">
-        <div className="container mx-auto px-4">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 md:mb-20"
-          >
-            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
-              Benefits
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-              {/* Mobile heading */}
-              <span className="md:hidden">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                  Serious Founders
-                </span>
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                  Pick Us
-                </span>
-              </span>
-              {/* Desktop heading */}
-              <span className="hidden md:inline">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-                  Why Fast-Moving Founders
-                </span>
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
-                  Pick Us
-                </span>
-              </span>
-            </h2>
-          </motion.div>
-
-          {/* Benefits Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {/* Card 1 - Designed to Convert */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="group relative"
-            >
-              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
-                {/* Illustration Area */}
-                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                  {/* Floating pill tags */}
-                  <div className="flex flex-col items-center justify-center gap-3 p-6">
-                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                      Clarity first
-                    </div>
-                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                      Trust-focused
-                    </div>
-                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      Action-driven
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-6 md:p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Designed to convert</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Fund-ready sites that turn traffic into demos and signups. Clear product story & credible.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 2 - Built Fast */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-              className="group relative"
-            >
-              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
-                {/* Illustration Area */}
-                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                  {/* Browser mockup */}
-                  <div className="relative bg-gray-900 rounded-xl p-4 shadow-2xl transform rotate-[-2deg]">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-800 rounded-lg px-6 py-4 min-w-[180px]">
-                      <p className="text-white text-sm font-medium">Your Next Site</p>
-                      <p className="text-gray-400 text-xs mt-1">Starts Here.</p>
-                    </div>
-                    {/* Cursor */}
-                    <div className="absolute bottom-0.5 left-0.5 w-5 h-5">
-                      <svg viewBox="0 0 24 24" fill="white" className="drop-shadow-lg" style={{ transform: 'rotate(12deg)' }}>
-                        <path d="M4 4l16 6-6 2-2 6z"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-6 md:p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Built fast, without drama</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    2-3 week sprint from call to live site. No back-and-forth, polished and performant.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 3 - Progress Updates */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-              className="group relative"
-            >
-              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
-                {/* Illustration Area */}
-                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                  {/* Task completion pills */}
-                  <div className="flex flex-col items-center justify-center gap-3 p-6">
-                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                      Mobile shipped.
-                    </div>
-                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
-                      </svg>
-                      Homepage layout drafted.
-                    </div>
-                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                      </svg>
-                      New version is live.
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-6 md:p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Progress every single day</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Daily updates and Looms. See what's shipped, what's next, no chasing.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
@@ -998,6 +823,180 @@ export default function Home() {
               source="calendly_embed"
             />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-24 relative bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <span className="text-sm font-medium tracking-[0.2em] text-gray-500 uppercase mb-4 block">
+              Benefits
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+              {/* Mobile heading */}
+              <span className="md:hidden">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                  Serious Founders
+                </span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                  Pick Us
+                </span>
+              </span>
+              {/* Desktop heading */}
+              <span className="hidden md:inline">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                  Why Fast-Moving Founders
+                </span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 via-gray-700 to-gray-900">
+                  Pick Us
+                </span>
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Benefits Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {/* Card 1 - Designed to Convert */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Floating pill tags */}
+                  <div className="flex flex-col items-center justify-center gap-3 p-6">
+                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                      Clarity first
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      Trust-focused
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      Action-driven
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Designed to convert</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Fund-ready sites that turn traffic into demos and signups. Clear product story & credible.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2 - Built Fast */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Browser mockup */}
+                  <div className="relative bg-gray-900 rounded-xl p-4 shadow-2xl transform rotate-[-2deg]">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                      </div>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg px-6 py-4 min-w-[180px]">
+                      <p className="text-white text-sm font-medium">Your Next Site</p>
+                      <p className="text-gray-400 text-xs mt-1">Starts Here.</p>
+                    </div>
+                    {/* Cursor */}
+                    <div className="absolute bottom-0.5 left-0.5 w-5 h-5">
+                      <svg viewBox="0 0 24 24" fill="white" className="drop-shadow-lg" style={{ transform: 'rotate(12deg)' }}>
+                        <path d="M4 4l16 6-6 2-2 6z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Built fast, without drama</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    2-3 week sprint from call to live site. No back-and-forth, polished and performant.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Progress Updates */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="relative bg-gray-50 hover:bg-gray-100/80 border border-gray-200/60 rounded-3xl overflow-hidden transition-all duration-300 h-full hover:-translate-y-1">
+                {/* Illustration Area */}
+                <div className="relative h-56 md:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
+                  {/* Task completion pills */}
+                  <div className="flex flex-col items-center justify-center gap-3 p-6">
+                    <div className="flex items-center gap-2 bg-gray-700/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Mobile shipped.
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-800/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
+                      </svg>
+                      Homepage layout drafted.
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-600/90 backdrop-blur-sm text-white text-sm px-4 py-2.5 rounded-full shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                      </svg>
+                      New version is live.
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Progress every single day</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Daily updates and Looms. See what's shipped, what's next, no chasing.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

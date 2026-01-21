@@ -61,7 +61,7 @@ export default function Header() {
               className="flex items-center gap-2"
             >
               <Image
-                src="/Peakleads.png"
+                src="/Peakleads2.png"
                 alt="PeakLeads Logo"
                 width={40}
                 height={40}
